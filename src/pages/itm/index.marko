@@ -1,0 +1,32 @@
+<h1>Happy ITM</h1>
+
+<button on-click("addCat")>Add Text Button</button>
+
+<div id="catContainer">
+  <if(state.cats.length > 0)>
+    <for|cat| of=state.cats>
+      <div>
+        <h3>${cat.name} (ID: ${cat.id})</h3>
+        <img src=cat.imageUrl alt=cat.name width="200"/>
+      </div>
+    </for>
+  </if>
+</div>
+
+<style>
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  #catContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+</style>
